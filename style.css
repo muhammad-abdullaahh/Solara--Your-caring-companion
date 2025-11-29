@@ -1,0 +1,79 @@
+:root{
+  --teal:#14b8a6;
+  --teal-2:#3b82f6;
+  --muted:#0f766e;
+  --bg1:linear-gradient(180deg,#e9fbfa 0%,#f5fdfa 100%);
+  --card-bg: rgba(255,255,255,0.78);
+  --glass: blur(6px);
+  --round: 12px;
+  --max:920px;
+  --shadow: 0 10px 30px rgba(2,6,23,0.06);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+/* page */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg1);color:var(--muted)}
+.page{min-height:100vh;padding:28px;display:flex;align-items:flex-start;justify-content:center;gap:24px}
+
+/* card */
+.card{width:100%;max-width:var(--max);background:var(--card-bg);backdrop-filter:var(--glass);border-radius:var(--round);box-shadow:var(--shadow);display:flex;flex-direction:column;overflow:hidden}
+
+/* topbar */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid rgba(20,184,166,0.06)}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--teal),var(--teal-2));color:#fff;font-weight:700}
+.logoBig{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#dff8f4,#eafbf9);color:var(--teal);font-size:36px;margin:16px auto}
+h1{margin:0;font-size:18px;color:var(--muted)}
+.tag{margin:0;font-size:12px;color:#0ea5a0}
+
+/* messages */
+.messages{padding:18px;min-height:360px;max-height:58vh;overflow:auto}
+.empty{text-align:center;color:var(--muted);padding:12px}
+.note{font-size:12px;color:#0b6f66;margin-top:10px}
+
+/* composer */
+.composer{display:flex;gap:12px;padding:12px;border-top:1px solid rgba(20,184,166,0.04);align-items:flex-end}
+textarea{flex:1;padding:12px;border-radius:10px;border:1px solid rgba(15,118,110,0.08);resize:none;font-size:14px;background:#fff;min-height:48px}
+.actions{display:flex;gap:8px;align-items:center}
+.btn{padding:8px 12px;border-radius:10px;border:0;cursor:pointer;background:transparent;color:var(--muted)}
+.btn.primary{background:var(--teal);color:#fff}
+.btn.ghost{border:1px solid rgba(15,118,110,0.08)}
+
+/* message bubbles */
+.row{display:flex;margin:8px 0;align-items:flex-end}
+.user{margin-left:auto;background:linear-gradient(135deg,var(--teal),var(--teal-2));color:#fff;padding:12px 14px;border-radius:16px;border-bottom-right-radius:6px;max-width:78%}
+.ai{margin-right:auto;background:#fff;padding:12px 14px;border-radius:16px;border-bottom-left-radius:6px;max-width:78%;border:1px solid rgba(15,118,110,0.06)}
+.meta{font-size:11px;color:rgba(15,118,110,0.6);margin-top:8px}
+
+/* loading */
+.loading{display:flex;gap:6px}
+.loading span{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:jump 1s infinite}
+.loading span:nth-child(2){animation-delay:0.12s}
+.loading span:nth-child(3){animation-delay:0.24s}
+@keyframes jump{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+
+/* report */
+.reportBody{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:18px}
+.freqList{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+.bar{background:#ecfdfa;border-radius:999px;padding:6px}
+.fill{height:10px;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--teal-2))}
+
+/* wheel simple */
+.wheel{background:linear-gradient(180deg,#f7fffe,#f0fbff);border-radius:12px;padding:16px;min-height:200px;display:flex;align-items:center;justify-content:center;position:relative}
+.node{display:flex;flex-direction:column;align-items:center;font-size:12px;color:var(--muted);margin:6px}
+.center{width:84px;height:84px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#e6fbff,#e8fdf7);border:2px solid rgba(15,118,110,0.06)}
+
+/* resources */
+.resources{padding:16px;border-top:1px solid rgba(15,118,110,0.04)}
+.links{display:flex;gap:12px}
+.links a{flex:1;padding:10px;border-radius:8px;text-decoration:none;background:#fff;color:var(--muted);text-align:center;border:1px solid rgba(15,118,110,0.06)}
+
+/* small screens */
+@media (max-width:780px){
+  .reportBody{grid-template-columns:1fr}
+  .page{padding:16px}
+}
+.hidden{display:none}
+.disclaimer{font-size:12px;color:#0b6f66;margin-top:6px}
+.small-disclaimer{font-size:12px;color:#065f57;margin-top:10px}

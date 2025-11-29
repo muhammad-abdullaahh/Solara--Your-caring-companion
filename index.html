@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SOLARA — Your caring companion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app" class="page">
+    <!-- CHAT PANEL -->
+    <section id="chatPanel" class="card">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden>❤</div>
+          <div>
+            <h1>SOLARA</h1>
+            <p class="tag">Your caring companion</p>
+            <!-- ADDED: explicit chatbot disclaimer for viva -->
+            <p class="disclaimer">SOLARA is an AI chatbot — not a human or a replacement for professional help.</p>
+          </div>
+        </div>
+        <button id="openReport" class="btn ghost">Well-being Report →</button>
+      </header>
+
+      <div id="messages" class="messages" aria-live="polite">
+        <!-- empty state or messages get rendered here -->
+        <div id="empty" class="empty">
+          <div class="logoBig">❤</div>
+          <h2>Welcome to SOLARA</h2>
+          <p>Share how you're feeling. I'm here to listen and offer gentle suggestions.</p>
+          <div class="note">Not a replacement for professional help. If you're in crisis contact local services.</div>
+          <!-- ADDED: short chatbot note in empty state too -->
+          <div class="small-disclaimer">Note: SOLARA is an AI chatbot for support and reflection, not a licensed professional.</div>
+        </div>
+      </div>
+
+      <footer class="composer">
+        <textarea id="input" placeholder="Share how you're feeling..." rows="2" aria-label="message"></textarea>
+        <div class="actions">
+          <button id="send" class="btn primary">Send</button>
+          <button id="new" class="btn ghost">+ New</button>
+          <button id="clear" class="btn ghost">Clear</button>
+        </div>
+      </footer>
+    </section>
+
+    <!-- REPORT PANEL -->
+    <section id="reportPanel" class="card hidden">
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden>❤</div>
+          <div>
+            <h1>Well-being Report</h1>
+            <p class="tag">Quick emotional summary</p>
+            <!-- ADDED: same disclaimer on report panel -->
+            <p class="disclaimer">SOLARA is an AI chatbot — not a human or a replacement for professional help.</p>
+          </div>
+        </div>
+        <button id="backToChat" class="btn ghost">← Back</button>
+      </header>
+
+      <div class="reportBody">
+        <div class="column">
+          <h3>Emotion Frequency</h3>
+          <div id="freqList" class="freqList"></div>
+
+          <h3>Key Insight</h3>
+          <ul class="insights">
+            <li>Talking about feelings reduces intensity over time.</li>
+            <li>Try one small coping step (breath, walk, talk).</li>
+          </ul>
+        </div>
+
+        <div class="column">
+          <h3>Emotional Balance</h3>
+          <div id="wheel" class="wheel" aria-hidden>
+            <!-- simple visual nodes -->
+          </div>
+
+          <div class="reportActions">
+            <button id="export" class="btn primary">Export</button>
+            <button id="clearAll" class="btn ghost">Clear All</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="resources">
+        <h4>Resources</h4>
+        <div class="links">
+          <a href="https://www.cdc.gov/mental-health/caring/index.html" target="_blank" rel="noopener">Mental Health Resources</a>
+          <a href="https://www.psychologytoday.com" target="_blank" rel="noopener">Find a Therapist</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script defer src="app.js"></script>
+</body>
+</html>
